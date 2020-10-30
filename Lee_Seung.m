@@ -1,7 +1,6 @@
 function [W,H,Res] = Lee_Seung(A,W,H,iter_max)
 % Lee-Seung for P1
 
-    k = 10; 
     Res = zeros(iter_max,1);
     %W = rand(n,k);
     %H = rand(k,d);

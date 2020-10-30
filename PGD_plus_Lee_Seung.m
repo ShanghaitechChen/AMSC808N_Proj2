@@ -1,11 +1,11 @@
-function [W,H,Res] = PGD_plus_Lee_Seung(A, W, H, iter_max)
+function [W,H,Res] = PGD_plus_Lee_Seung(A, W, H, iter_max, lr)
 % PGD+Lee_Seung for P1
     Res = zeros(iter_max,1);
     R = A - W * H;
     for iter = 1 : iter_max
-        if iter<= iter_max * 0.75
-            W_new = subplus(W + 1e-2 * R * H');
-            H_new = subplus(H + 1e-2 * W' * R);
+        if iter<= iter_max * 0.5
+            W_new = subplus(W + lr * R * H');
+            H_new = subplus(H + lr * W' * R);
             W = W_new;
             H = H_new;
             R = A - W * H;
