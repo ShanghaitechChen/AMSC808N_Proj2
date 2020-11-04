@@ -1,5 +1,5 @@
 clear; clc; close all
-M = readdata();
+[M, Y] = readdata();
 Res_abs = zeros(8, 9);
 Res_rel = zeros(8, 9);
 [Usvd, Ssvd, Vsvd] = svd(M);
